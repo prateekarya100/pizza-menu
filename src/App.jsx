@@ -1,6 +1,7 @@
 import "./index.css";
 import Pizza from "./Components/Pizza";
 import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 const pizzaData = [
   {
@@ -90,25 +91,6 @@ function Menu() {
 //     </>
 //   );
 // }
-
-function Footer() {
-  const hour = new Date().getHours();
-  const openHour = 9;
-  const closingHour = 22;
-
-  const isOpen = hour >= openHour && hour <= closingHour;
-
-  if (isOpen) alert("We're currently open!");
-  else alert("sorry we're closed now!.");
-
-  return (
-    <>
-      <footer className="footer">
-        {new Date().toString()} We're currently open!.
-      </footer>
-    </>
-  );
-}
 
 function App() {
   return (
