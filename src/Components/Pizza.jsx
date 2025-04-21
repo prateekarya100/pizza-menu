@@ -1,13 +1,13 @@
 import React from "react";
 
-const Pizza = (props) => {
+const Pizza = ({ pizzaObj }) => {
   return (
     <>
-      <li className="pizza">
-        <img src={props.pizzaObj.photoName} alt="" />
-        <span className="">{props.pizzaObj.name}</span>
-        <p className="">{props.pizzaObj.ingredients}</p>
-        <span>{props.pizzaObj.price}</span>
+      <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
+        <img src={pizzaObj.photoName} alt="" />
+        <span className="">{pizzaObj.name}</span>
+        <p className="">{pizzaObj.ingredients}</p>
+        <span>{pizzaObj.soldOut ? "SOLD OUT" : pizzaObj.price}</span>
       </li>
     </>
   );

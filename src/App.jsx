@@ -1,7 +1,7 @@
 import "./index.css";
-import Pizza from "./Components/Pizza";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import Menu from "./Components/Menu";
 
 const pizzaData = [
   {
@@ -48,56 +48,12 @@ const pizzaData = [
   },
 ];
 
-function Menu() {
-  return (
-    <>
-      <main className="menu">
-        <h2>Our Menu</h2>
-        <ul className="pizzas">
-          {pizzaData.map((pizza, index) => (
-            <Pizza pizzaObj={pizza} key={index} />
-          ))}
-        </ul>
-
-        {/* <Pizza
-          name="Pizza Spinaci"
-          ingredients="Tomato, mozarella, spinach, and ricotta cheese"
-          photoName="./pizzas/spinaci.jpg"
-          price={100}
-        />
-
-        <Pizza
-          name="Pizza Funghi"
-          ingredients="Tomato, mozarella, mushrooms, and onion"
-          photoName="./pizzas/funghi.jpg"
-          price={100}
-        /> */}
-      </main>
-    </>
-  );
-}
-
-// function Pizza(props) {
-//   return (
-//     <>
-//       <li className="pizzas">
-//         <img src={props.pizza.photoName} alt={props.pizza.name} />
-//         <div>
-//           <h3>{props.pizza.name}</h3>
-//           <p>{props.pizza.ingredients}</p>
-//           <span>{props.pizza.price}</span>
-//         </div>
-//       </li>
-//     </>
-//   );
-// }
-
 function App() {
   return (
     <>
       <div className="container">
         <Header />
-        <Menu />
+        <Menu pizzaData={pizzaData} />
         <Footer />
       </div>
     </>
